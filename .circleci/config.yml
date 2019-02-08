@@ -14,3 +14,4 @@ jobs:
                   # cd learning-circleCI
                   #echo "It opened the file"
                   ssh -i "TestingatMS.pem" ubuntu@ec2-18-220-15-59.us-east-2.compute.amazonaws.com
+                  "yes"
