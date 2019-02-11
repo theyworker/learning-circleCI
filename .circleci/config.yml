@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  deploy:
+  build:
     docker:
       - image: ec2-18-220-15-59.us-east-2.compute.amazonaws.com
         aws_auth:
