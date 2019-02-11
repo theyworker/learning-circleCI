@@ -6,3 +6,12 @@ jobs:
     steps:
       - checkout 
       - run: echo "hello world"
+  delpoy:
+    steps:
+      - run : echo "this is running"
+workflows:
+    version: 2
+    justtesting:
+        jobs:
+          - build
+          - delpoy
