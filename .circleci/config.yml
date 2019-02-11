@@ -1,12 +1,8 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: 274501458307.dkr.ec2-18-220-15-59.us-east-2.compute.amazonaws.com
-        aws_auth:
-          aws_access_key_id: 'AKIAIWBJ6IY4ULAQIGBA'
-          aws_secret_access_key: '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'
+    docker: 
+      - image: circleci/node:4.8.2 
     steps:
-      - run: 
-          name: "Checking uptime"
-          command: uptime -p
+      - checkout 
+      - run: echo "hello world"
