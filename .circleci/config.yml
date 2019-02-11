@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout 
       - run: echo "hello world"
-  delpoy:
+  deploy:
     steps:
       - run : echo "this is running"
 workflows:
@@ -14,4 +14,4 @@ workflows:
     justtesting:
         jobs:
           - build
-          - delpoy
+          - deploy
