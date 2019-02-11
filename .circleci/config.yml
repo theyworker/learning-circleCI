@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker: # use the docker executor type; machine and macos executors are also supported
-      - image: circleci/node:8.0 # the primary container, where your job's commands are run
+      - image: circleci/node:4.8.2 # the primary container, where your job's commands are run
     steps:
       - checkout # check out the code in the project directory
       - run: echo "hello world"
@@ -10,8 +10,16 @@ jobs:
       - run:
           name: AWS EC2 Deployment
           branch: master
-          command: 
-                  # cd learning-circleCI
-                  #echo "It opened the file"
-                  ssh -i "TestingatMS.pem" ubuntu@ec2-18-220-15-59.us-east-2.compute.amazonaws.com
-                  yes
+          command: cd learning-circleCI
+                   echo "It opened the file"
+                  #  ssh -i "TestingatMS.pem" ubuntu@ec2-18-220-15-59.us-east-2.compute.amazonaws.com
+  deploy:
+    docker:
+      - image: ec2-18-220-15-59.us-east-2.compute.amazonaws.com
+        aws_auth:
+          aws_access_key_id: 'AKIAIWBJ6IY4ULAQIGBA'
+          aws_secret_access_key: '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'
+    steps:
+      - run: 
+        name: "Checking uptime"
+        command: uptime -p
