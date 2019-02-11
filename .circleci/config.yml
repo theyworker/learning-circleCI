@@ -8,5 +8,5 @@ jobs:
           aws_secret_access_key: 'mch67+556dpnYMC6o/eLEAzat9dMQqqWpWBo+rs9'
     steps:
       - run: 
-        name: "Checking uptime"
-        command: uptime -p
+          name: "Checking uptime"
+          command: uptime -p
